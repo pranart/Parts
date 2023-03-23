@@ -1,7 +1,16 @@
-name: My workflow
-on: [push]
+name: Git Auto Semver Tag
+
+on:
+  push:
+    branches: [ main ]
+
 jobs:
-  build:
+  auto-tag:
     runs-on: ubuntu-latest
     steps:
-      - uses: ArvindSinghRawat/Git-Automatic-Semver-Tagging@1.0.0
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
+    - uses: ArvindSinghRawat/Git-Automatic-Semver-Tagging@main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
