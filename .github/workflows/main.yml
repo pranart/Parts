@@ -2,7 +2,8 @@ name: Git Auto Semver Tag
 
 on:
   push:
-    branches: [ master ]
+    branches: 
+      - master
 
 jobs:
   auto-tag:
