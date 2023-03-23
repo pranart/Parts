@@ -13,7 +13,7 @@ namespace Parts
 			// l == length
 			// s == split
 			// m == merge
-			// Major
+			// minor
 			if(CommandLine.Parser.Default.ParseArguments(args,options))
 			{
 				try
