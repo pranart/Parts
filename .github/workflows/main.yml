@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Auto Increment Semver Action
-        uses: MCKanpolat/auto-semver-action@1.0.9
+        uses: MCKanpolat/auto-semver-action@1.0.7
         id: versioning
         with:
           releaseType: patch 
