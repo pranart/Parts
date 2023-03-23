@@ -1,2 +1,7 @@
-- name: Git Automatic Semver Tagging
-  uses: ArvindSinghRawat/Git-Automatic-Semver-Tagging@1.0.0
+name: My workflow
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ArvindSinghRawat/Git-Automatic-Semver-Tagging@1.0.0
