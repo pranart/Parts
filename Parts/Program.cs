@@ -10,6 +10,9 @@ namespace Parts
 		public static void Main(string[] args)
 		{
 			Options options = new Options();
+			// l == length
+			// s == split
+			// m == merge
 			if(CommandLine.Parser.Default.ParseArguments(args,options))
 			{
 				try
