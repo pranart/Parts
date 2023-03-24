@@ -2,20 +2,16 @@ name: Git Auto Semver Tag
 
 on:
   push:
-    branches: 
+    branches:
       - master
 
 jobs:
   auto-tag:
     runs-on: ubuntu-latest
     steps:
-      - name: Auto Increment Semver Action
-        uses: MCKanpolat/auto-semver-action@1.0.7
-        id: versioning
-        with:
-          releaseType: patch 
-          incrementPerCommit: true
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Next Release Number
-        run: echo ${{ steps.versioning.outputs.version }}
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
+    - uses: ArvindSinghRawat/Git-Automatic-Semver-Tagging@main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
